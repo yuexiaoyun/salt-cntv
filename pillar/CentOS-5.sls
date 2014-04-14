@@ -1,2 +1,2 @@
-CentOS-5:
+centOS-5:
   - none

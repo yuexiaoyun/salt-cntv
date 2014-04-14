@@ -1,9 +1,9 @@
 base:
   '*':
-    - Roles
+    - roles
   'osfinger:CentOS-5':
     - match: grain
-    - CentOS-5
+    - centOS-5
   'osfinger:CentOS-6':
     - match: grain
-    - CentOS-6
+    - centOS-6

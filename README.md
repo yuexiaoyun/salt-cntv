@@ -28,8 +28,11 @@ salt-cntv
 
 **master上更新后一定要同步：**
 
-	salt '*' saltutil.refresh_pillar
-
+	salt "*" saltutil.refresh_pillar
+	
+	#下面两条命令显示master和minion分别存储的pillar
+	salt "*" pillar.items
+	salt "*" pillar.raw
 
 匹配方法
 

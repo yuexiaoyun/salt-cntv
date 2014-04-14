@@ -30,7 +30,7 @@ salt-cntv
 
 	salt "*" saltutil.refresh_pillar
 	
-	#下面两条命令显示master和minion分别存储的pillar
+	#下面两条命令分别显示master和minion存储的pillar
 	salt "*" pillar.items
 	salt "*" pillar.raw
 

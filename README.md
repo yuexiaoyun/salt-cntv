@@ -26,10 +26,12 @@ salt-cntv
         - common-beaver-shipper
 ```
 
-*master上更新后一定要同步：*
+**master上更新后一定要同步：**
+
 	salt '*' saltutil.refresh_pillar
 
 
-匹配方法：
+匹配方法
+
 	salt -v -I "Roles:common-base" test.ping
 

@@ -1,1 +1,3 @@
-#sensitive data
+#sensitive files
+data/serversList.csv
+

@@ -1,0 +1,12 @@
+myShadow:
+  serviceA:
+    user:
+      - admin
+      - user
+    pass:
+      - pass1
+      - pass2
+  serviceB:
+    user: admin
+    pass: pass3
+  

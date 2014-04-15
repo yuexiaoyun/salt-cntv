@@ -1,0 +1,16 @@
+#!/bin/bash
+
+STATE_OK=0
+STATE_WARNING=1
+STATE_CRITICAL=2
+tcp_num=`netstat -antlp |wc -l`
+if [ $tcp_num -gt "4500" ] && [ $tcp_num -lt "5000" ];then
+echo "Be careful:$tcp_num"
+exit $STATE_WARNING
+elif [ $tcp_num -gt "5000" ];then
+echo "Too many connection:$tcp_num"
+exit $STATE_CRITICAL
+else
+echo "tcp connection is normal"
+exit $STATE_OK
+fi

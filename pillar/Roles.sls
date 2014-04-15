@@ -87,21 +87,31 @@
     - common-base
     - adminServer-svnServer
     - adminServer-ldapServer-slave
-    - adminServer-jen[?1h=[m[m[0m[H[J[1;1Hecho "  roles:"
-cat ../data/serversList.csv |grep -v "^#\|^#" |awk -F, '{print $1" "$2}' |while  [3;1Hread ip projs
-do[5;9Hecho "  {% if grains['id'] == \"$ip\" %}"[6;9Hecho $projs |sed "s/\;/ /g" |while read -a proj[7;9Hdo[8;17Hfor p in "${proj[@]}"[9;17Hdo[10;25Hecho "    - $p"[11;17Hdone[12;9Hdone[13;9Hecho -e "  {% endif %}\n"
-done
-[1m~
-~
-~
-~
-~
-~
-~
-~
-~[14;1H[24;1H[0m[?1l>Vim: Caught deadly signal TERM
-Vim: Finished.
-[24;1Hse
+    - adminServer-jenkinsServer
+  {% endif %}
+
+  {% if grains['id'] == "10.70.58.196" %}
+    - common-base
+    - adminServer-svnServer-cluster63.228
+    - adminServer-jenkinsServer
+  {% endif %}
+
+  {% if grains['id'] == "10.70.58.184" %}
+    - common-base
+    - docker
+  {% endif %}
+
+  {% if grains['id'] == "10.70.58.183" %}
+    - common-base
+    - docker-registry
+  {% endif %}
+
+  {% if grains['id'] == "10.70.36.85" %}
+    - common-base
+  {% endif %}
+
+  {% if grains['id'] == "10.70.36.86" %}
+    - common-base
   {% endif %}
 
   {% if grains['id'] == "10.70.36.87" %}

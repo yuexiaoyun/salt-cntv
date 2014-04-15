@@ -1,0 +1,6 @@
+#IP,serverType(splitBy;),os,sshPort,hostname,targetMysql,extC,EndOfLine
+10.70.56.146,common-base;common-nginx-lua,el6,22,,,,eol
+10.70.58.147,common-base;common-nginx-php,el6,22,,10.70.56.147,,eol
+10.70.58.148,common-base;common-nginx-lua;project-boardcast-lua,el6,22,,10.70.56.147,,eol
+10.70.59.11,common-base;common-nginx;common-jdk-tomcat;common-memcached;project-boardcast-web,el6,22,,,,eol
+10.70.59.12,common-base;common-nginx;common-jdk-tomcat;common-memcached;project-boardcast-web,el6,22,,,,eol

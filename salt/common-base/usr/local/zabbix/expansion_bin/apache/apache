@@ -1,0 +1,9 @@
+#!/bin/sh
+result=$(/usr/local/zabbix/expansion_bin/nagios/check_tcp -4 -H 127.0.0.1 -p 80 |grep OK)
+#result=$(/usr/local/zabbix/expansion_bin/nagios/check_tcp -4 -H localhost -p 80)
+if [ -z "$result" ] 
+then
+	echo 1
+else
+	echo 0
+fi

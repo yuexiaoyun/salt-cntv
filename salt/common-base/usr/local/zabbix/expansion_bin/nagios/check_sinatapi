@@ -1,0 +1,13 @@
+#!/bin/bash
+ST_OK=0
+ST_CR=2
+
+wget -S -o /tmp/api_t_sina_com_cn.out http://api.t.sina.com.cn/statuses/user_timeline.json
+cat /tmp/api_t_sina_com_cn.out | grep "HTTP/1.1" > /dev/null
+if [ $? -eq "0" ];then
+echo "api.t.sina.com.cn is OK."
+exit $ST_OK
+else
+echo "api.t.sina.com.cn NOT working"
+exit $ST_CR
+fi

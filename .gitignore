@@ -1,3 +1,5 @@
 #sensitive files
+pillar/myShadow.sls
 data/serversList.csv
-
+salt/common-base/home/autoOps/.ssh/authorized_keys
+salt/common-base/root/.ssh/authorized_keys

@@ -1,6 +1,11 @@
 salt-cntv
 =========
 
+## jinja2
+中文文档：
+http://docs.jinkan.org/docs/jinja2/templates.html
+
+## pillar使用方法：
 使用pillar规划服务器角色，在pillar文件中指定服务器角色，为states tree匹配提供基础。
 
 	salt "*" pillar.data
@@ -28,11 +33,15 @@ salt-cntv
 
 **master上更新后一定要同步：**
 
-	salt "*" saltutil.refresh_pillar
-	
-	#下面两条命令分别显示master和minion存储的pillar
-	salt "*" pillar.items
-	salt "*" pillar.raw
+```
+salt "*" saltutil.refresh_pillar
+```
+
+```
+#下面两条命令分别显示master和minion存储的pillar
+salt "*" pillar.items
+salt "*" pillar.raw
+```
 
 匹配方法
 

@@ -9,6 +9,8 @@ openLdap_rpm:
   file.managed:
     {% if 'CentOS-6' in grains['osfinger'] %}
     - source: salt://openLdap/nss-pam-ldapd-0.8.13.x86_64.rpm._el6
+    {% elif 'CentOS-5' in grains['osfinger'] %}
+    - source: salt://openLdap/nss-pam-ldapd-0.8.13.x86_64.rpm._el5
     {% else %}
     - source: salt://openLdap/nss-pam-ldapd-0.8.13.x86_64.rpm._el5
     {% endif %}

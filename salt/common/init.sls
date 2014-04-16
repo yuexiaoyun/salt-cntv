@@ -3,15 +3,14 @@ include:
   - cntvCms
   - openLdap
   - rsyslog
-  - common.cmdHistoryAudit
-  - common.zabbixAgent
-  - common.sshd
-  - common.sshKeys
-  - common.monit
-  - common.cntvSysCmds
-  - common.baseOptimize
-  - common.baseSudoers
-
+  - cmdHistoryAudit
+#TODO
+#  - monit
+#  - zabbixAgent
+#  - sshd
+#  - rootSshKeys
+#  - cntvSysCmds
+#  - baseOptimize
 
 /usr/local/cntv/shell:
   file.directory:
@@ -26,3 +25,13 @@ include:
     - group: root
     - dir_mode: 644
     - makedirs: True
+
+common_pkgs:
+  pkg.installed:
+    - names:
+{% if grains['os_family'] == "RedHat" %}
+      - rsync
+      - wget
+      - gcc
+      - make
+{% endif %}

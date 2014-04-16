@@ -2,6 +2,7 @@ rsync:
   pkg:
     - installed
 
+#执行安装脚本
 cntvCms_installScript:
   cmd:
     - wait
@@ -48,3 +49,47 @@ cntvCms_installScript:
     - group: root
     - dir_mode: 644
     - makedirs: True
+
+#创建用户，分发sshkey
+autoOps:
+  user.present:
+    - shell: /bin/bash
+    - home: /home/autoOps
+    - uid: 7878
+    - groups:
+      - wheel
+
+/home/autoOps/.ssh/authorized_keys:
+  file.managed:
+    - user: autoOps
+    - group: autoOps
+    - mode: 0600
+    - dir_mode: 0700
+    - makedirs: True
+    - contents_pillar: myShadow:sshKey_pub:autoOps
+    - require:
+      - user: autoOps
+
+#向控制中心发布私钥
+{% if "adminServer-centralControl" in pillar["roles"] %}
+/home/autoOps/.ssh/id_rsa:
+  file.managed:
+    - user: autoOps
+    - group: autoOps
+    - mode: 0600
+    - dir_mode: 0700
+    - makedirs: True
+    - contents_pillar: myShadow:sshKey_priv:autoOps
+    - require:
+      - user: autoOps
+/home/autoOps/.ssh/id_rsa.pub:
+  file.managed:
+    - user: autoOps
+    - group: autoOps
+    - mode: 0644
+    - dir_mode: 0700
+    - makedirs: True
+    - contents_pillar: myShadow:sshKey_pub:autoOps
+    - require:
+      - user: autoOps
+{% endif %}

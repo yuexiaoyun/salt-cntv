@@ -12,6 +12,13 @@ include:
 #  - cntvSysCmds
 #  - baseOptimize
 
+unlockPasswd:
+  cmd.wait:
+    - name: chattr -i /etc/passwd /etc/shadow /etc/group /etc/gshadow
+    - user: root
+    - watch:
+      - user: autoOps
+
 /usr/local/cntv/shell:
   file.directory:
     - user: root

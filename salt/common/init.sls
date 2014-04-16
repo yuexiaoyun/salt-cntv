@@ -2,10 +2,10 @@ include:
   - yumRepo
   - cntvCms
   - openLdap
+  - rsyslog
   - common.cmdHistoryAudit
   - common.zabbixAgent
   - common.sshd
-  - common.rsyslog
   - common.sshKeys
   - common.monit
   - common.cntvSysCmds

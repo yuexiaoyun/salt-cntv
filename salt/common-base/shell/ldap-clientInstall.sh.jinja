@@ -1,9 +1,15 @@
 #!/bin/bash
 
-allowGroups="|{{ pillar["ldapAllowGroupsDict"][pillar["ldapAllowGroups"]] }}"
-echo $allowGroups
-exit
-
+allowGroups="|
+{%- if "ldapAllowGroups" in pillar %}
+{%- for group in pillar['ldapAllowGroups'] %}
+{%- set names = pillar["ldapAllowGroupsDict"][group] %}
+{%- for name in names %}
+{{- name -}}
+{%- endfor %}
+{%- endfor %}
+{%- endif -%}
+"
 
 uri="ldap://ldap2.ops.cntv.priv ldap://ldap1.ops.cntv.priv"
 baseDN="dc=ops,dc=cntv,dc=priv"

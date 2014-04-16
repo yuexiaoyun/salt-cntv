@@ -1,423 +1,423 @@
 ldapAllowGroups:
   {% if grains['id'] == "10.64.12.38" %}
-    ops
+    - ops
   {% endif %}
 
   {% if grains['id'] == "10.7.0.54" %}
-    ops
+    - ops
   {% endif %}
 
   {% if grains['id'] == "10.7.0.55" %}
-    ops
+    - ops
   {% endif %}
 
   {% if grains['id'] == "10.70.32.100" %}
-    ops
+    - ops
   {% endif %}
 
   {% if grains['id'] == "10.70.32.102" %}
-    ops
+    - ops
   {% endif %}
 
   {% if grains['id'] == "10.70.32.105" %}
-    ops
+    - ops
   {% endif %}
 
   {% if grains['id'] == "10.64.12.37" %}
-    ops
+    - ops
   {% endif %}
 
   {% if grains['id'] == "10.70.58.48" %}
-    ops
+    - ops
   {% endif %}
 
   {% if grains['id'] == "10.70.63.131" %}
-    ops
+    - ops
   {% endif %}
 
   {% if grains['id'] == "192.168.112.120" %}
-    ops
+    - ops
   {% endif %}
 
   {% if grains['id'] == "10.70.32.76" %}
-    ops
+    - ops
   {% endif %}
 
   {% if grains['id'] == "10.70.32.77" %}
-    ops
+    - ops
   {% endif %}
 
   {% if grains['id'] == "10.70.63.130" %}
-    ops
+    - ops
   {% endif %}
 
   {% if grains['id'] == "10.70.63.146" %}
-    ops
+    - ops
   {% endif %}
 
   {% if grains['id'] == "10.70.36.196" %}
-    ops
+    - ops
   {% endif %}
 
   {% if grains['id'] == "10.70.36.197" %}
-    ops
+    - ops
   {% endif %}
 
   {% if grains['id'] == "10.64.12.49" %}
-    ops
+    - ops
   {% endif %}
 
   {% if grains['id'] == "10.70.58.196" %}
-    ops
+    - ops
   {% endif %}
 
   {% if grains['id'] == "10.70.58.184" %}
-    ops
+    - ops
   {% endif %}
 
   {% if grains['id'] == "10.70.58.183" %}
-    ops
+    - ops
   {% endif %}
 
   {% if grains['id'] == "10.70.36.85" %}
-    ops
+    - ops
   {% endif %}
 
   {% if grains['id'] == "10.70.36.86" %}
-    ops
+    - ops
   {% endif %}
 
   {% if grains['id'] == "10.70.36.87" %}
-    ops
+    - ops
   {% endif %}
 
   {% if grains['id'] == "10.70.36.88" %}
-    ops
+    - ops
   {% endif %}
 
   {% if grains['id'] == "10.70.36.89" %}
-    ops
+    - ops
   {% endif %}
 
   {% if grains['id'] == "10.70.62.79" %}
-    ops
+    - ops
   {% endif %}
 
   {% if grains['id'] == "10.70.62.80" %}
-    ops
+    - ops
   {% endif %}
 
   {% if grains['id'] == "10.70.62.81" %}
-    ops
+    - ops
   {% endif %}
 
   {% if grains['id'] == "10.70.62.82" %}
-    ops
+    - ops
   {% endif %}
 
   {% if grains['id'] == "10.70.62.83" %}
-    ops
+    - ops
   {% endif %}
 
   {% if grains['id'] == "10.70.62.84" %}
-    ops
+    - ops
   {% endif %}
 
   {% if grains['id'] == "10.70.63.126" %}
-    ops
+    - ops
   {% endif %}
 
   {% if grains['id'] == "10.70.63.127" %}
-    ops
+    - ops
   {% endif %}
 
   {% if grains['id'] == "10.70.63.133" %}
-    ops
+    - ops
   {% endif %}
 
   {% if grains['id'] == "10.70.63.134" %}
-    ops
+    - ops
   {% endif %}
 
   {% if grains['id'] == "10.70.62.93" %}
-    ops
-    dev
+    - ops
+    - dev
   {% endif %}
 
   {% if grains['id'] == "10.70.36.112" %}
-    ops
-    dev
+    - ops
+    - dev
   {% endif %}
 
   {% if grains['id'] == "10.70.36.113" %}
-    ops
-    dev
+    - ops
+    - dev
   {% endif %}
 
   {% if grains['id'] == "10.70.62.106" %}
-    ops
+    - ops
   {% endif %}
 
   {% if grains['id'] == "10.70.62.218" %}
-    ops
+    - ops
   {% endif %}
 
   {% if grains['id'] == "10.70.56.23" %}
-    ops
+    - ops
   {% endif %}
 
   {% if grains['id'] == "10.70.62.102" %}
-    ops
+    - ops
   {% endif %}
 
   {% if grains['id'] == "10.70.62.103" %}
-    ops
+    - ops
   {% endif %}
 
   {% if grains['id'] == "10.70.63.154" %}
-    ops
+    - ops
   {% endif %}
 
   {% if grains['id'] == "10.70.63.155" %}
-    ops
+    - ops
   {% endif %}
 
   {% if grains['id'] == "10.70.63.156" %}
-    ops
+    - ops
   {% endif %}
 
   {% if grains['id'] == "10.70.63.157" %}
-    ops
+    - ops
   {% endif %}
 
   {% if grains['id'] == "10.70.63.158" %}
-    ops
+    - ops
   {% endif %}
 
   {% if grains['id'] == "10.70.63.159" %}
-    ops
+    - ops
   {% endif %}
 
   {% if grains['id'] == "10.70.63.140" %}
-    ops
+    - ops
   {% endif %}
 
   {% if grains['id'] == "10.70.63.141" %}
-    ops
+    - ops
   {% endif %}
 
   {% if grains['id'] == "10.70.36.16" %}
-    ops
+    - ops
   {% endif %}
 
   {% if grains['id'] == "10.70.36.17" %}
-    ops
+    - ops
   {% endif %}
 
   {% if grains['id'] == "10.64.0.225" %}
-    ops
+    - ops
   {% endif %}
 
   {% if grains['id'] == "10.64.0.234" %}
-    ops
+    - ops
   {% endif %}
 
   {% if grains['id'] == "10.64.0.230" %}
-    ops
+    - ops
   {% endif %}
 
   {% if grains['id'] == "10.70.32.62" %}
-    ops
+    - ops
   {% endif %}
 
   {% if grains['id'] == "10.64.0.228" %}
-    ops
+    - ops
   {% endif %}
 
   {% if grains['id'] == "10.70.62.91" %}
-    ops
+    - ops
   {% endif %}
 
   {% if grains['id'] == "10.70.62.184" %}
-    ops
+    - ops
   {% endif %}
 
   {% if grains['id'] == "10.70.62.185" %}
-    ops
+    - ops
   {% endif %}
 
   {% if grains['id'] == "10.72.2.24" %}
-    ops
-    dev
+    - ops
+    - dev
   {% endif %}
 
   {% if grains['id'] == "10.70.56.15" %}
-    ops
-    dev
+    - ops
+    - dev
   {% endif %}
 
   {% if grains['id'] == "10.70.56.17" %}
-    ops
-    dev
+    - ops
+    - dev
   {% endif %}
 
   {% if grains['id'] == "10.70.56.18" %}
-    ops
-    dev
+    - ops
+    - dev
   {% endif %}
 
   {% if grains['id'] == "10.70.62.100" %}
-    ops
-    dev
+    - ops
+    - dev
   {% endif %}
 
   {% if grains['id'] == "10.70.62.101" %}
-    ops
-    dev
+    - ops
+    - dev
   {% endif %}
 
   {% if grains['id'] == "10.70.62.186" %}
-    ops
-    dev
+    - ops
+    - dev
   {% endif %}
 
   {% if grains['id'] == "10.70.62.187" %}
-    ops
-    dev
+    - ops
+    - dev
   {% endif %}
 
   {% if grains['id'] == "10.70.62.94" %}
-    ops
-    dev
+    - ops
+    - dev
   {% endif %}
 
   {% if grains['id'] == "10.70.63.121" %}
-    ops
-    dev
+    - ops
+    - dev
   {% endif %}
 
   {% if grains['id'] == "10.72.2.58" %}
-    ops
-    dev
+    - ops
+    - dev
   {% endif %}
 
   {% if grains['id'] == "192.168.165.56" %}
-    ops
-    dev
+    - ops
+    - dev
   {% endif %}
 
   {% if grains['id'] == "10.70.62.197" %}
-    ops
+    - ops
   {% endif %}
 
   {% if grains['id'] == "10.70.62.196" %}
-    ops
+    - ops
   {% endif %}
 
   {% if grains['id'] == "10.64.1.174" %}
-    ops
+    - ops
   {% endif %}
 
   {% if grains['id'] == "10.64.1.175" %}
-    ops
+    - ops
   {% endif %}
 
   {% if grains['id'] == "10.64.1.176" %}
-    ops
+    - ops
   {% endif %}
 
   {% if grains['id'] == "10.64.1.177" %}
-    ops
+    - ops
   {% endif %}
 
   {% if grains['id'] == "10.70.58.190" %}
-    ops
-    dev
+    - ops
+    - dev
   {% endif %}
 
   {% if grains['id'] == "10.70.58.191" %}
-    ops
-    dev
+    - ops
+    - dev
   {% endif %}
 
   {% if grains['id'] == "10.70.58.192" %}
-    ops
-    dev
+    - ops
+    - dev
   {% endif %}
 
   {% if grains['id'] == "10.70.58.193" %}
-    ops
-    dev
+    - ops
+    - dev
   {% endif %}
 
   {% if grains['id'] == "10.70.58.194" %}
-    ops
-    dev
+    - ops
+    - dev
   {% endif %}
 
   {% if grains['id'] == "10.70.58.195" %}
-    ops
-    dev
+    - ops
+    - dev
   {% endif %}
 
   {% if grains['id'] == "10.70.56.146" %}
-    ops
-    dev
+    - ops
+    - dev
   {% endif %}
 
   {% if grains['id'] == "10.70.58.147" %}
-    ops
-    dev
+    - ops
+    - dev
   {% endif %}
 
   {% if grains['id'] == "10.70.58.148" %}
-    ops
-    dev
+    - ops
+    - dev
   {% endif %}
 
   {% if grains['id'] == "10.70.59.11" %}
-    ops
-    dev
+    - ops
+    - dev
   {% endif %}
 
   {% if grains['id'] == "10.70.59.12" %}
-    ops
-    dev
+    - ops
+    - dev
   {% endif %}
 
   {% if grains['id'] == "10.70.59.13" %}
-    ops
+    - ops
   {% endif %}
 
   {% if grains['id'] == "10.70.59.14" %}
-    ops
+    - ops
   {% endif %}
 
   {% if grains['id'] == "10.70.59.15" %}
-    ops
+    - ops
   {% endif %}
 
   {% if grains['id'] == "10.70.59.16" %}
-    ops
+    - ops
   {% endif %}
 
   {% if grains['id'] == "10.70.59.17" %}
-    ops
+    - ops
   {% endif %}
 
   {% if grains['id'] == "10.64.0.1" %}
-    ops
+    - ops
   {% endif %}
 
   {% if grains['id'] == "10.64.0.2" %}
-    ops
+    - ops
   {% endif %}
 
   {% if grains['id'] == "10.64.0.3" %}
-    ops
+    - ops
   {% endif %}
 
   {% if grains['id'] == "10.64.0.4" %}
-    ops
+    - ops
   {% endif %}
 

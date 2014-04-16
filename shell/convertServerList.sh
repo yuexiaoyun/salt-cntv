@@ -10,7 +10,7 @@ function convf()
 		do
 			for p in "${proj[@]}"
 			do
-				echo "    $p"
+				echo "    - $p"
 			done
 		done
 		echo -e "  {% endif %}\n"

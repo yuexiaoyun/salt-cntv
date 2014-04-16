@@ -13,7 +13,7 @@ include:
   - common-base.baseSudoers
 
 
-/usr/local/cntv/_shell:
+/usr/local/cntv/shell:
   file.directory:
     - user: root
     - group: root

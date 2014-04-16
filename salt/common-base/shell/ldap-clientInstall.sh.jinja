@@ -1,7 +1,15 @@
 #!/bin/bash
 
+allowGroups="|{{ pillar["ldapAllowGroupsDict"][pillar["ldapAllowGroups"]] }}"
+echo $allowGroups
+exit
+
+
+uri="ldap://ldap2.ops.cntv.priv ldap://ldap1.ops.cntv.priv"
+baseDN="dc=ops,dc=cntv,dc=priv"
+rpmFile="/usr/local/cntv/rpmPackage/nss-pam-ldapd-0.8.13.x86_64.rpm"
+
 chattr -i /etc/passwd /etc/shadow /etc/group /etc/gshadow
-[ -f /tmp/ldap_client.config ] && source /tmp/ldap_client.config || { echo "no config file!!"; exit 1; }
 
 killall -9 nslcd
 
@@ -21,7 +29,7 @@ bind_timelimit 5
 timelimit 10
 ssl start_tls
 tls_reqcert never
-pam_password_prohibit_message \"Please visit http://10.70.36.196/ssp to change your password.\"
+pam_password_prohibit_message \"Please visit http://10.70.36.196/ssp change your password.\"
 pam_authz_search (&(objectClass=posixGroup)($allowGroups)(memberUid=\$uid))
 " > /etc/nslcd.conf
 

@@ -1,11 +1,11 @@
-zabbixAgent_service:
+zabbixAgent_tgz:
   cmd.wait:
-    - name: "chkconfig zabbix_agentd on; /etc/init.d/zabbix_agentd restart;"
+    - name: "tar zxf /usr/local/zabbix.tgz -C /usr/local"
     - user: root
-    - watch:
-      - file: /etc/init.d/zabbix_agentd
-    - require:
-      - cmd: zabbixAgent_ldconfig
+    - stateful: True
+    - watch: 
+      - file: /usr/local/zabbix.tgz
+    - oreder: 10
 
 zabbixAgent_ldconfig:
   cmd.wait:
@@ -14,6 +14,15 @@ zabbixAgent_ldconfig:
     - stateful: True
     - watch: 
       - file: /etc/ld.so.conf.d/zabbixAgent.conf
+    - oreder: 11
+
+zabbixAgent_service:
+  cmd.wait:
+    - name: "chkconfig zabbix_agentd on; /etc/init.d/zabbix_agentd restart;"
+    - user: root
+    - watch:
+      - file: /etc/init.d/zabbix_agentd
+    - oreder: 12
 
 #文件
 #链接库
@@ -42,13 +51,11 @@ zabbixAgent_ldconfig:
     - mode: 0755
     - defaults:
         hostname: {{ salt['cmd.run']('/usr/local/cntv/sys_getHostName.sh') }}
-    - require:
-      - file: /usr/local/zabbix
 
 #软件静态文件
-/usr/local/zabbix:
-  file.recurse:
-    - source: salt://zabbixAgent/files
+/usr/local/zabbix.tgz:
+  file.managed:
+    - source: salt://zabbixAgent/files/zabbix.tgz
     - user: root
     - group: root
     - file_mode: 0755

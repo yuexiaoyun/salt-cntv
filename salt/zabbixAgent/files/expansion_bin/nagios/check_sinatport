@@ -1,0 +1,27 @@
+#!/bin/bash
+
+ST_OK=0
+ST_CR=2
+mIp="10.70.62.184"
+mPort="80 11211 11911 22201"
+rm -f /tmp/checkportok.log /tmp/checkportfail.log
+for loop in $mPort
+do
+nc -w3 $mIp $mPort
+if [ $? -eq 0 ]; then
+  echo "$mIp $loop Runing ok." >> /tmp/checkportok.log
+else
+  sleep 30
+  nc -w5 $mIp $mPort
+  if [ $? -eq 1 ]; then
+  echo "$mIp $mPort NOT ok." >> /tmp/checkportfail.log
+  fi
+fi
+done
+if [ -e /tmp/checkportfail.log ];then
+  cat /tmp/checkportfail.log
+  exit $ST_CR
+else
+  echo "$mPort ok."
+  exit $ST_OK
+fi

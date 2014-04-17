@@ -1,23 +1,18 @@
 include:
   - yumRepo
+  - cntvSysCmds
   - cntvCms
   - openLdap
   - rsyslog
   - cmdHistoryAudit
+  - monit
+  - zabbixAgent
 #TODO
-#  - monit
 #  - zabbixAgent
 #  - sshd
 #  - rootSshKeys
 #  - cntvSysCmds
 #  - baseOptimize
-
-unlockPasswd:
-  cmd.wait:
-    - name: chattr -i /etc/passwd /etc/shadow /etc/group /etc/gshadow
-    - user: root
-    - watch:
-      - user: autoOps
 
 /usr/local/cntv/shell:
   file.directory:
@@ -42,3 +37,16 @@ common_pkgs:
       - gcc
       - make
 {% endif %}
+
+#用户安全
+unlockPasswd:
+  cmd.run:
+    - name: chattr -i /etc/passwd /etc/shadow /etc/group /etc/gshadow
+    - user: root
+    - order: 1
+
+lockPasswd:
+  cmd.run:
+    - name: chattr +i /etc/passwd /etc/shadow /etc/group /etc/gshadow
+    - user: root
+    - order: last

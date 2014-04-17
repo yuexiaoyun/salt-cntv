@@ -1,0 +1,54 @@
+#!/bin/bash
+ 
+zapachever="1.4"
+rval=0
+ 
+function usage()
+{
+    echo "zmemcache version: $zmemcache"
+    echo "usage:"
+    echo "    $0 status -- Check total accesses."
+}
+ 
+########
+# Main #
+########
+ 
+if [[ $# ==  1 ]];then
+    VAR=$(wget --quiet -O - http://192.168.115.38/memcache_test.php)
+    CASE_VALUE=$1
+else
+    #No Parameter
+    usage
+    exit 0
+fi
+ 
+if [[ -z $VAR ]]; then
+    echo "ZBX_NOTSUPPORTED"
+    exit 1
+fi
+ 
+case $CASE_VALUE in
+'status')
+    result=$(echo "$VAR"|grep 'Cant connect to'|tr -s " " " ")
+    if [ -n "$result" ] 
+    then
+	echo 'memcache is error'"$result"
+    else
+	echo 'memcache all is OK!'"$result"
+    fi
+    ;;
+    #rval=$?;;
+*)
+    usage
+    exit $rval;;
+esac
+ 
+if [ "$rval" -ne 0 ]; then
+      echo "ZBX_NOTSUPPORTED"
+fi
+ 
+exit $rval
+ 
+#
+# end zapache

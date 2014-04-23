@@ -5,7 +5,7 @@ zabbixAgent_tgz:
     - stateful: True
     - watch: 
       - file: /usr/local/zabbix.tgz
-    - oreder: 10
+    - oreder: 100
 
 zabbixAgent_ldconfig:
   cmd.wait:
@@ -14,7 +14,7 @@ zabbixAgent_ldconfig:
     - stateful: True
     - watch: 
       - file: /etc/ld.so.conf.d/zabbixAgent.conf
-    - oreder: 11
+    - oreder: 110
 
 zabbixAgent_service:
   cmd.wait:
@@ -22,7 +22,7 @@ zabbixAgent_service:
     - user: root
     - watch:
       - file: /etc/init.d/zabbix_agentd
-    - oreder: 12
+    - oreder: 120
 
 #文件
 #链接库
@@ -51,6 +51,8 @@ zabbixAgent_service:
     - mode: 0755
     - defaults:
         hostname: {{ salt['cmd.run']('/usr/local/cntv/sys_getHostName.sh') }}
+    - require:
+      - file:  /usr/local/cntv
 
 #软件静态文件
 /usr/local/zabbix.tgz:

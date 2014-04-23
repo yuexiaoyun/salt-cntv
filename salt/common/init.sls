@@ -7,10 +7,10 @@ include:
   - cmdHistoryAudit
   - monit
   - zabbixAgent
+  - sshd
+  - user
 #TODO
-#  - zabbixAgent
 #  - sshd
-#  - rootSshKeys
 #  - cntvSysCmds
 #  - baseOptimize
 

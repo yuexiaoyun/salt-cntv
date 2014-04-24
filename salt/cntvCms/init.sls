@@ -1,37 +1,23 @@
-rsync:
-  pkg:
-    - installed
-
-#执行安装脚本
-cntvCms_installScript:
-  cmd:
-    - wait
-    - name: /usr/local/cntv/shell/cntvCmsSetup.sh
+cntvCms_cmdStart:
+  cmd.wait:
+    - name: "/usr/bin/rsyncCntvCms --daemon --config=/etc/cntvCms/rsyncd.conf --port 7878 &"
     - user: root
-    - group: root
     - watch:
-      - pkg: rsync
-      - file: /usr/local/cntv/shell/cntvCmsSetup.sh
       - file: /etc/cntvCms/rsyncd.conf
       - file: /etc/cntvCms/rsyncd.secrets
-
-/usr/local/cntv/shell/cntvCmsSetup.sh:
-  file.managed:
-    - source: salt://cntvCms/cntvCmsSetup.sh
-    - user: root
-    - group: root
-    - mode: 755
     - require:
-      - file: /usr/local/cntv/shell
+      - user: autoOps
+      - file: /etc/rc.local
+      - pkg: rsync
 
 /etc/cntvCms/rsyncd.conf:
   file.managed:
     - source: salt://cntvCms/rsyncd.conf
     - user: root
     - group: root
-    - mode: 0644
-    - require:
-      - file: /etc/cntvCms
+    - file_mode: 644
+    - dir_mode: 644
+    - makedirs: True
 
 /etc/cntvCms/rsyncd.secrets:
   file.managed:
@@ -39,13 +25,6 @@ cntvCms_installScript:
     - template: jinja
     - user: root
     - group: root
-    - mode: 0400
-    - require:
-      - file: /etc/cntvCms
-
-/etc/cntvCms:
-  file.directory:
-    - user: root
-    - group: root
+    - file_mode: 400
     - dir_mode: 644
     - makedirs: True

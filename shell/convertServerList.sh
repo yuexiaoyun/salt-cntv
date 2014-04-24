@@ -10,8 +10,19 @@ function convf()
 		do
 			for p in "${proj[@]}"
 			do
-				echo "    - $p"
+				if [  "$1" == "roles" ]
+				then
+					p1=""
+					echo $p |sed "s/-/\n/g" |while read line; do p1="$p1-$line"; echo "    - $p1" |sed "s/- -/- /g" >> /tmp/res; done;
+				else
+					echo "    - $p"
+				fi
 			done
+			if [  "$1" == "roles" ]
+			then
+				cat /tmp/res |sort |uniq
+				rm -f /tmp/res
+			fi
 		done
 		echo -e "  {% endif %}\n"
 	done

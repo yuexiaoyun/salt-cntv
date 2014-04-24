@@ -3,9 +3,9 @@
     - source: salt://monit/bin/monit_5.8.bin
     - user: root
     - group: root
-    - mode: 0755
+    - file_mode: 755
     - makedirs: True
-    - dir_mode: 0755
+    - dir_mode: 755
 
 /usr/local/monit/etc/monitrc:
   file.managed:
@@ -13,9 +13,9 @@
     - template: jinja
     - user: root
     - group: root
-    - mode: 0700
+    - file_mode: 700
     - makedirs: True
-    - dir_mode: 0644
+    - dir_mode: 644
 
 /usr/local/monit/etc/inc/system.cfg:
   file.managed:
@@ -23,9 +23,9 @@
     - template: jinja
     - user: root
     - group: root
-    - mode: 0700
+    - file_mode: 700
     - makedirs: True
-    - dir_mode: 0644
+    - dir_mode: 644
 
 monit_start:
   cmd.wait:

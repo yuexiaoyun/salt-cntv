@@ -1,18 +1,18 @@
 include:
-  - yumRepo
-  - cntvSysCmds
-  - cntvCms
-  - openLdap
-  - rsyslog
   - cmdHistoryAudit
+  - cntvCms
+  - cntvSysCmds
   - monit
-  - zabbixAgent
+  - openLdap
+  - rcLocal
+  - rsync
+  - rsyslog
   - sshd
+  - sudoers
   - user
-#TODO
-#  - sshd
-#  - cntvSysCmds
-#  - baseOptimize
+  - yumRepo
+  - zabbixAgent
+  - common.baseOptimize
 
 /usr/local/cntv/shell:
   file.directory:

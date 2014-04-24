@@ -31,7 +31,7 @@ zabbixAgent_service:
     - source: salt://zabbixAgent/ld.so.conf.d/zabbixAgent.conf
     - user: root
     - group: root
-    - file_mode: 0755
+    - file_mode: 755
 
 #服务脚本
 /etc/init.d/zabbix_agentd:
@@ -39,7 +39,7 @@ zabbixAgent_service:
     - source: salt://zabbixAgent/init.d/zabbix_agentd
     - user: root
     - group: root
-    - file_mode: 0755
+    - file_mode: 755
 
 #配置文件
 /usr/local/zabbix/etc/zabbix_agentd.conf:
@@ -48,7 +48,7 @@ zabbixAgent_service:
     - template: jinja
     - user: root
     - group: root
-    - mode: 0755
+    - file_mode: 755
     - defaults:
         hostname: {{ salt['cmd.run']('/usr/local/cntv/sys_getHostName.sh') }}
     - require:
@@ -60,6 +60,6 @@ zabbixAgent_service:
     - source: salt://zabbixAgent/files/zabbix.tgz
     - user: root
     - group: root
-    - file_mode: 0755
+    - file_mode: 755
     - makedirs: True
-    - dir_mode: 0755
+    - dir_mode: 755

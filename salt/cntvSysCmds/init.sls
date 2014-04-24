@@ -3,7 +3,7 @@
     - source: salt://cntvSysCmds/files
     - user: root
     - group: root
-    - file_mode: 0755
+    - file_mode: 755
     - makedirs: True
-    - dir_mode: 0755
+    - dir_mode: 755
     - order: 1

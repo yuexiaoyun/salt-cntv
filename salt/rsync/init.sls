@@ -7,12 +7,6 @@ rsync:
     - user: root
     - group: root
     - file_mode: 644
-    - contents: |
-        max connections=36000
-        use chroot=no
-        log file=/var/log/rsyncd.log
-        pid file=/var/run/rsyncd.pid
-        lock file=/var/run/rsyncd.lock
     - order: 100
 
 /etc/rsyncd_salt.secrets:
@@ -27,6 +21,12 @@ rsync_adminServer-svnServer:
   file.append:
     - name: /etc/rsyncd_salt.conf
     - text: |
+        max connections=36000
+        use chroot=no
+        log file=/var/log/rsyncd.log
+        pid file=/var/run/rsyncd.pid
+        lock file=/var/run/rsyncd.lock
+        
         [svn]
                 uid             = apache
                 gid             = apache
